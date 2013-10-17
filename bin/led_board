@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
+
+require 'led_board'
+require 'optparse'
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: led_banner [options]'
+
+  opts.on('-m', '--message MESSAGE', 'The message to display') do |message|
+    options[:message] = message
+  end
+
+  opts.on('-c', '--color COLOR', 'The color to use') do |color|
+    options[:color] = LEDBoard::Color.const_get(color.upcase)
+  end
+
+  opts.on('-f', '--font FONT', 'The font to use') do |font|
+    options[:font] = LEDBoard::Font.const_get(font.upcase)
+  end
+
+  opts.on('-d', '--display DISPLAY', 'The dispaly speed to use') do |display|
+    options[:display] = LEDBoard::Display.const_get(display.upcase)
+  end
+
+  opts.on('-la', '--lagging LAGGING', 'The lagging speed to use') do |lagging|
+    options[:lagging] = LEDBoard::Lagging.const_get(lagging.upcase)
+  end
+
+  opts.on('-le', '--leading LEADING', 'The leading speed to use') do |leading|
+    options[:leading] = LEDBoard::Leading.const_get(leading.upcase)
+  end
+
+  opts.on('-w', '--waiting WAITING', 'The waiting speed to use') do |waiting|
+    options[:waiting] = LEDBoard::Waiting.const_get(waiting.upcase)
+  end
+end.parse!
+
+board = LEDBoard.connect(1)
+message = LEDBoard::Message.new(options.delete(:message), **options)
+
+board.send(message)
+
+board.disconnect
