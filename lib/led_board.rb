@@ -6,6 +6,8 @@ require "led_board/waiting"
 require "led_board/font"
 require "led_board/color"
 
+require "led_board/message"
+
 module LEDBoard
   # Your code goes here...
 end
