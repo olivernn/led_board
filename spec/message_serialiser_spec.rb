@@ -8,7 +8,7 @@ describe LEDBoard::MessageSerialiser do
       before { LEDBoard::Checksum.stub(:generate).and_return("XX") }
       let(:message) { LEDBoard::Message.new("Hello") }
 
-      it { should == "<L1><PA><FA><WA><FA><AA><CB>HelloXX" }
+      it { should == "<L1><PA><FA><MA><WA><FA><AA><CB>HelloXX" }
     end
   end
 end

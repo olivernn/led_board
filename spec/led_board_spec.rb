@@ -11,7 +11,7 @@ describe LEDBoard do
   describe "#send" do
     context "with a string" do
       it "should write to the serial file" do
-        serial_file.should_receive(:write).with("<ID01><L1><PA><FA><WA><FA><AA><CB>HelloXX<E>")
+        serial_file.should_receive(:write).with("<ID01><L1><PA><FA><MA><WA><FA><AA><CB>HelloXX<E>")
         board.send("Hello")
       end
     end
@@ -20,7 +20,7 @@ describe LEDBoard do
       let(:message) { LEDBoard::Message.new("Hello", color: LEDBoard::Color::GREEN) }
 
       it "should write to the serial file" do
-        serial_file.should_receive(:write).with("<ID01><L1><PA><FA><WA><FA><AA><CE>HelloXX<E>")
+        serial_file.should_receive(:write).with("<ID01><L1><PA><FA><MA><WA><FA><AA><CE>HelloXX<E>")
         board.send(message)
       end
     end

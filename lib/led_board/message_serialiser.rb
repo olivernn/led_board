@@ -13,7 +13,7 @@ class LEDBoard
     attr_reader :message
 
     def data
-      @data ||= line + page + leading + waiting + lagging + font + color + text
+      @data ||= line + page + leading + display + waiting + lagging + font + color + text
     end
 
     def checksum
@@ -30,6 +30,10 @@ class LEDBoard
 
     def leading
       key_value "F", message.leading
+    end
+
+    def display
+      key_value "M", message.display
     end
 
     def waiting

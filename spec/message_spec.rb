@@ -10,6 +10,7 @@ describe LEDBoard::Message do
     its(:page) { should == 'A' }
     its(:leading) { should == LEDBoard::Leading::IMMEDIATE }
     its(:lagging) { should == LEDBoard::Lagging::IMMEDIATE }
+    its(:display) { should == LEDBoard::Display::FASTEST }
     its(:waiting) { should == LEDBoard::Waiting::FAST }
     its(:color) { should == LEDBoard::Color::RED }
     its(:font) { should == LEDBoard::Font::NORMAL }
