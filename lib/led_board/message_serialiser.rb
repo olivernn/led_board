@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   class MessageSerialiser
     def initialize(message)
       @message = message

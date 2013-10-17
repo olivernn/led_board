@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   class Message
 
     attr_reader :text, :line, :page, :leading, :lagging, :waiting, :color, :font

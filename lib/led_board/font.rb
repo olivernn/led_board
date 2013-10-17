@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Font
     NORMAL = 'A'
     BOLD = 'B'

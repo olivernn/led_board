@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Leading
     IMMEDIATE = 'A'
     XOPEN = 'B'

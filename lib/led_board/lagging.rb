@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Lagging
     IMMEDIATE = 'A'
     XOPEN = 'B'

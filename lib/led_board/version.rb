@@ -1,3 +1,3 @@
-module LEDBoard
+class LEDBoard
   VERSION = "0.0.1"
 end

@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Waiting
     SLOW = 'K'
     MEDIUM = 'D'

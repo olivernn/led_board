@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Checksum
     def self.generate(text)
       text

@@ -1,4 +1,4 @@
-module LEDBoard
+class LEDBoard
   module Color
     DIM_RED = 'A'
     RED = 'B'

@@ -10,6 +10,6 @@ require "led_board/checksum"
 require "led_board/message"
 require "led_board/message_serialiser"
 
-module LEDBoard
+class LEDBoard
   # Your code goes here...
 end
