@@ -12,7 +12,7 @@ require "led_board/message"
 require "led_board/message_serialiser"
 require "led_board/packet"
 
-require "pi_wire"
+require "pi_wire/init"
 
 class LEDBoard
   def self.connect(id)
