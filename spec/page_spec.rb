@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe LEDBoard::Message do
+describe LEDBoard::Page do
   describe "#initialize" do
     let(:text) { "Hello, World!" }
-    subject { LEDBoard::Message.new(text) }
+    subject { LEDBoard::Page.new(text) }
 
     its(:text) { should == text }
     its(:line) { should == 1 }

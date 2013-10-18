@@ -41,7 +41,7 @@ OptionParser.new do |opts|
 end.parse!
 
 board = LEDBoard.connect(1)
-message = LEDBoard::Message.new(options.delete(:message), **options)
+message = LEDBoard::Page.new(options.delete(:message), **options)
 
 board.send(message)
 

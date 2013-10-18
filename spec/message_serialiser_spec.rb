@@ -6,7 +6,7 @@ describe LEDBoard::MessageSerialiser do
 
     context "default message" do
       before { LEDBoard::Checksum.stub(:generate).and_return("XX") }
-      let(:message) { LEDBoard::Message.new("Hello") }
+      let(:message) { LEDBoard::Page.new("Hello") }
 
       it { should == "<L1><PA><FA><MA><WA><FA><AA><CB>HelloXX" }
     end

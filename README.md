@@ -35,7 +35,7 @@ There are more examples in `/examples`.
 
 You can set different options by creating a message object manually:
 
-    message = LEDBoard::Message.new("Hello, World!", color: LEDBoard::Color::RAINBOW)
+    message = LEDBoard::Page.new("Hello, World!", color: LEDBoard::Color::RAINBOW)
 
 There are options for color, font, speed, intro and exit transition.
 

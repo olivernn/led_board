@@ -8,7 +8,7 @@ require "led_board/font"
 require "led_board/color"
 
 require "led_board/checksum"
-require "led_board/message"
+require "led_board/page"
 require "led_board/message_serialiser"
 require "led_board/packet"
 
@@ -25,7 +25,7 @@ class LEDBoard
 
   def send(msg)
     case msg
-    when LEDBoard::Message
+    when LEDBoard::Page
       send_message(msg)
     when String
       send_string(msg)
@@ -52,6 +52,6 @@ class LEDBoard
   end
 
   def send_string(str)
-    send_message LEDBoard::Message.new(str)
+    send_message LEDBoard::Page.new(str)
   end
 end

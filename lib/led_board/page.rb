@@ -1,5 +1,5 @@
 class LEDBoard
-  class Message
+  class Page
 
     attr_reader :text, :line, :page, :leading, :lagging, :display, :waiting, :color, :font
 

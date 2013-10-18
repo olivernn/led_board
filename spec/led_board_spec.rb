@@ -17,7 +17,7 @@ describe LEDBoard do
     end
 
     context "with a message" do
-      let(:message) { LEDBoard::Message.new("Hello", color: LEDBoard::Color::GREEN) }
+      let(:message) { LEDBoard::Page.new("Hello", color: LEDBoard::Color::GREEN) }
 
       it "should write to the serial file" do
         serial_file.should_receive(:write).with("<ID01><L1><PA><FA><MA><WA><FA><AA><CE>HelloXX<E>")
