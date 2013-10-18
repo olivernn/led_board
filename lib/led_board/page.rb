@@ -1,9 +1,9 @@
 class LEDBoard
-  class Page
+  class Page < Message
 
     attr_reader :text, :line, :page, :leading, :lagging, :display, :waiting, :color, :font
 
-    def initialize(text, line: 1, page: 'A', leading: Leading::IMMEDIATE, lagging: Lagging::IMMEDIATE, display: Display::FASTEST, waiting: Waiting::FAST, color: Color::RED, font: Font::NORMAL)
+    def initialize(text, line: 1, page: 'A', leading: Leading::SCROLL_LEFT, lagging: Lagging::SCROLL_LEFT, display: Display::MIDDLE_SLOW, waiting: Waiting::MEDIUM, color: Color::RED, font: Font::NORMAL)
       @text = text
       @line = line
       @page = page

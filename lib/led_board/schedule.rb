@@ -1,5 +1,5 @@
 class LEDBoard
-  class Schedule
+  class Schedule < Message
     ONE_DAY = 86_400
 
     attr_reader :pages, :id, :starts_at, :ends_at

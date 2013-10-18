@@ -8,10 +8,10 @@ describe LEDBoard::Page do
     its(:text) { should == text }
     its(:line) { should == 1 }
     its(:page) { should == 'A' }
-    its(:leading) { should == LEDBoard::Leading::IMMEDIATE }
-    its(:lagging) { should == LEDBoard::Lagging::IMMEDIATE }
-    its(:display) { should == LEDBoard::Display::FASTEST }
-    its(:waiting) { should == LEDBoard::Waiting::FAST }
+    its(:leading) { should == LEDBoard::Leading::SCROLL_LEFT }
+    its(:lagging) { should == LEDBoard::Lagging::SCROLL_LEFT }
+    its(:display) { should == LEDBoard::Display::MIDDLE_SLOW }
+    its(:waiting) { should == LEDBoard::Waiting::MEDIUM }
     its(:color) { should == LEDBoard::Color::RED }
     its(:font) { should == LEDBoard::Font::NORMAL }
   end

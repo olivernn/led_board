@@ -8,7 +8,7 @@ describe LEDBoard::PageSerialiser do
       before { LEDBoard::Checksum.stub(:generate).and_return("XX") }
       let(:page) { LEDBoard::Page.new("Hello") }
 
-      it { should == "<L1><PA><FA><MA><WA><FA><AA><CB>HelloXX" }
+      it { should == "<L1><PA><FE><Ma><WD><FE><AA><CB>HelloXX" }
     end
   end
 end
