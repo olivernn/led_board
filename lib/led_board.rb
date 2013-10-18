@@ -11,6 +11,7 @@ require "led_board/checksum"
 require "led_board/page"
 require "led_board/schedule"
 require "led_board/message_serialiser"
+require "led_board/schedule_serialiser"
 require "led_board/packet"
 
 require "pi_wire/init"
