@@ -11,6 +11,7 @@ require "led_board/checksum"
 require "led_board/page"
 require "led_board/schedule"
 require "led_board/message_serialiser"
+require "led_board/page_serialiser"
 require "led_board/schedule_serialiser"
 require "led_board/packet"
 
@@ -49,7 +50,7 @@ class LEDBoard
   end
 
   def send_message(message)
-    serialised_message = LEDBoard::MessageSerialiser.new(message).to_s
+    serialised_message = LEDBoard::MessageSerialiser.serialise(message)
     send_packet LEDBoard::Packet.new(id, serialised_message)
   end
 

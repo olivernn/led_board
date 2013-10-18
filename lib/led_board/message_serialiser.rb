@@ -1,5 +1,17 @@
 class LEDBoard
   class MessageSerialiser
+
+    def self.serialise(message)
+      case message
+      when LEDBoard::Page
+        LEDBoard::PageSerialiser.new(message).to_s
+      when LEDBoard::Schedule
+        LEDBoard::ScheduleSerialiser.new(message).to_s
+      else
+        raise ArgumentError
+      end
+    end
+
     def initialize(message)
       @message = message
     end
@@ -12,48 +24,8 @@ class LEDBoard
 
     attr_reader :message
 
-    def data
-      @data ||= line + page + leading + display + waiting + lagging + font + color + text
-    end
-
     def checksum
       LEDBoard::Checksum.generate(data)
-    end
-
-    def line
-      key_value "L", message.line
-    end
-
-    def page
-      key_value "P", message.page
-    end
-
-    def leading
-      key_value "F", message.leading
-    end
-
-    def display
-      key_value "M", message.display
-    end
-
-    def waiting
-      key_value "W", message.waiting
-    end
-
-    def lagging
-      key_value "F", message.lagging
-    end
-
-    def font
-      key_value "A", message.font
-    end
-
-    def color
-      key_value "C", message.color
-    end
-
-    def text
-      message.text
     end
 
     def key_value(key, value)
