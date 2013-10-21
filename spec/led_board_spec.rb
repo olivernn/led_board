@@ -45,4 +45,11 @@ describe LEDBoard do
       LEDBoard.connect(1)
     end
   end
+
+  describe "#delete_page" do
+    it "should send the appropriate message to the serial connection" do
+      serial_file.should_receive(:write).with("<ID01><DL1PA>XX<E>")
+      board.delete_page('A')
+    end
+  end
 end

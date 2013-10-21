@@ -8,12 +8,16 @@ require "led_board/font"
 require "led_board/color"
 
 require "led_board/checksum"
+
 require "led_board/message"
 require "led_board/page"
 require "led_board/schedule"
+require "led_board/delete_page"
+
 require "led_board/message_serialiser"
 require "led_board/page_serialiser"
 require "led_board/schedule_serialiser"
+require "led_board/delete_page_serialiser"
 require "led_board/packet"
 
 require "pi_wire/init"
@@ -40,6 +44,10 @@ class LEDBoard
 
   def disconnect
     output.close
+  end
+
+  def delete_page(page)
+    send_message(LEDBoard::DeletePage.new(page))
   end
 
   private

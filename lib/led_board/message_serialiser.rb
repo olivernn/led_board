@@ -7,6 +7,8 @@ class LEDBoard
         LEDBoard::PageSerialiser.new(message).to_s
       when LEDBoard::Schedule
         LEDBoard::ScheduleSerialiser.new(message).to_s
+      when LEDBoard::DeletePage
+        LEDBoard::DeletePageSerialiser.new(message).to_s
       else
         raise ArgumentError
       end
