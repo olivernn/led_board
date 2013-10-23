@@ -52,4 +52,11 @@ describe LEDBoard do
       board.delete_page('A')
     end
   end
+
+  describe "#delete_all" do
+    it "should send the appropriate message to the serial connection" do
+      serial_file.should_receive(:write).with("<ID01><D*>XX<E>")
+      board.delete_all
+    end
+  end
 end

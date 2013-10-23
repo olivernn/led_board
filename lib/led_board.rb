@@ -13,11 +13,13 @@ require "led_board/message"
 require "led_board/page"
 require "led_board/schedule"
 require "led_board/delete_page"
+require "led_board/delete_all"
 
 require "led_board/message_serialiser"
 require "led_board/page_serialiser"
 require "led_board/schedule_serialiser"
 require "led_board/delete_page_serialiser"
+require "led_board/delete_all_serialiser"
 require "led_board/packet"
 
 require "pi_wire/init"
@@ -48,6 +50,10 @@ class LEDBoard
 
   def delete_page(page)
     send_message(LEDBoard::DeletePage.new(page))
+  end
+
+  def delete_all
+    send_message(LEDBoard::DeleteAll.new)
   end
 
   private

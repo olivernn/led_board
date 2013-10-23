@@ -2,6 +2,8 @@ require 'led_board'
 
 board = LEDBoard.connect(1)
 
+board.delete_all
+
 message_1 = LEDBoard::Page.new("Page 1",
                                   page: 'A',
                                   leading: LEDBoard::Leading::SCROLL_LEFT,
